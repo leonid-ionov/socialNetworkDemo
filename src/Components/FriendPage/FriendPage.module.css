@@ -1,0 +1,11 @@
+.page{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    font-size: large;
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.page img {
+    width: 40px;
+}

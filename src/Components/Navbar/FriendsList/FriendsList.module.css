@@ -1,0 +1,11 @@
+.heading {
+    margin:20px 0px;
+}
+
+.friendList{
+    margin: 0 -15px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+}

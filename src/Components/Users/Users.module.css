@@ -1,0 +1,56 @@
+.userBlock {
+    padding-top: 10px;
+    display: grid;
+    grid-template-areas: 'photoBtn info';
+    grid-template-columns: 100px 400px;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.userPhotoBtn {
+    grid-area: photoBtn;
+    display: inline-grid;
+    grid-template-areas: 'img' 'btn';
+    justify-items: center;
+
+}
+
+.userPhoto {
+    grid-area: img;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.followBtn {
+    grid-area: btn;
+}
+
+.userInfo {
+    grid-area: info;
+    border: 2px ridge darkgray;
+    border-radius: 5px;
+    display: inline-grid;
+    grid-template-areas: 'name location' 'status status';
+    grid-template-rows: auto;
+}
+
+
+.userName {
+    grid-area: name;
+    margin: 10px 10% 10px;
+    font-weight: bold;
+}
+
+.userName a {
+    text-decoration: none;
+    color: black;
+}
+
+.userStatus {
+    grid-area: status;
+    font-style: italic;
+    margin-left: 10px;
+    opacity: 50%;
+}

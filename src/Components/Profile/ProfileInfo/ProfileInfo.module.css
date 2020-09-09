@@ -1,0 +1,37 @@
+.profile {
+    display: grid;
+    grid-template-areas: 'avatar info';
+    grid-template-columns: 0.5fr 1fr;
+}
+
+.avatarPhoto {
+    grid-area: avatar;
+    margin: 5px;
+    justify-self: center;
+}
+.avatarPhoto img {
+    border-radius: 10px;
+    width: 200px;
+}
+
+.profileInfo {
+    grid-area: info;
+    justify-self: left;
+    border: 3px ridge rosybrown;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.profileName {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.profileAboutMe{
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.profileLookingForAJob{
+    margin-bottom: 10px;
+}

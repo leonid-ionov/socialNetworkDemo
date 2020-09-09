@@ -1,0 +1,51 @@
+.header {
+    display: grid;
+    grid-area: header;
+    background-color: darkseagreen;
+    grid-template-areas: 'img loginBlock';
+    grid-template-columns: 60px 1fr;
+}
+
+.header img {
+    grid-area: img;
+    width: 60px;
+}
+
+.loginBlock {
+    grid-area: loginBlock;
+    justify-self: right;
+    display: inline-grid;
+    grid-template-areas: 'avatar login' 'avatar btn';
+    grid-gap: 5px;
+    border-left: 5px ridge black;
+}
+
+.loginBlock .Login {
+    grid-area: login;
+    font-size: large;
+    align-self: center;
+    padding-right: 5px;
+}
+
+.loginBlock .Avatar {
+    margin-left: 5px;
+    grid-area: avatar;
+    border-radius: 50%;
+}
+
+.loginBlock a {
+    font-size: larger;
+    align-self: center;
+    margin-left: 5px;
+    text-decoration: none;
+    color: #111111;
+}
+
+.loginBlock button {
+    margin-top: -15px;
+    grid-area: btn;
+    align-self: center;
+    border-color: darkturquoise;
+    border-radius: 7% ;
+    background-color: #22BCB9;
+}

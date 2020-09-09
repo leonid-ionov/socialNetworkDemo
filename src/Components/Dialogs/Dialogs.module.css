@@ -1,0 +1,49 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    align-items: start;
+}
+.dialog{
+    grid-template-areas: 'img a';
+    display: grid;
+    grid-template-columns: min-content;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.dialogsItems a {
+    text-decoration: none;
+    grid-area: a;
+    color: darkred;
+}
+
+.avatar{
+    grid-area: img;
+    width: 30px;
+    padding: 2px;
+    border-radius: 30px;
+}
+text{
+    grid-area: text;
+    padding: 4px;
+    border: 2px ridge darkseagreen;
+}
+
+.messages {
+    display: grid;
+    grid-template-rows: auto;
+    padding: 10px;
+}
+
+.messages .message:nth-child(even) {
+    justify-self: end;
+    display: grid;
+    grid-template-areas: 'text img';
+}
+.messages .message:nth-child(odd) {
+    justify-self: start;
+    display: grid;
+    grid-template-areas: 'img text';
+}

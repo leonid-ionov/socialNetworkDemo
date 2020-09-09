@@ -1,0 +1,16 @@
+.friend {
+display: grid;
+    grid-template-rows: 1fr 1fr;
+    font-size: small;
+    justify-items: center;
+}
+
+.friend a {
+    text-decoration: none;
+    color: darkred;
+}
+
+.friend img {
+    width: 30px;
+    border-radius: 30px;
+}
