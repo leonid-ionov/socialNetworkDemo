@@ -1,14 +1,3 @@
-.pages {
-    border: 1px ridge black;
-    margin: 2px;
-    width: 40px;
-}
-.selectedPage {
-    font-weight: bold;
-    border: 1px ridge black;
-    margin: 2px;
-    width: 40px;
-}
 .hiddenBtn {
     visibility: hidden;
 }

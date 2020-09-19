@@ -5,7 +5,6 @@ import User from '../Users/User'
 
 
 const Friends = (props) => {
-    console.log('render')
     return (
         <div>
             <Paginator pages={props.pages}

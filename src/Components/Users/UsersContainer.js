@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import {
     followUser,
     getUsersFromServer,
     setCurrentPage,
-    setCurrentPortion,
+    setCurrentPortion, setPortionSize,
     unfollowUser
 } from '../../Redux/usersReducer'
 import Users from './Users'
@@ -12,16 +12,32 @@ import Preloader from '../Common/Preloader/Preloader'
 import { compose } from 'redux'
 import {
     getCurrentPage, getCurrentPortion,
-    getFollowingInProgress, getIsFetching,
+    getFollowingInProgress, getIsFetching, getPageSize,
     getPortionSize, getTotalPages, getTotalPortions,
     getUsersFromState
 } from '../../Redux/UsersSelectors'
+import { useEvent } from '../../utils/hooks/useEvent'
+import { debounce } from '../../utils/debounce/debounce'
 
 const UsersContainer = (props) => {
-    const name = 'regular'
+    const name = 'regular',
+        [screenSize, setScreenSize] = useState(window.innerWidth),
+        debouncedHandleResize = debounce(() => {
+            setScreenSize(window.innerWidth)
+        },300)
     useEffect(() => {
         props.getUsersFromServer(name, props.currentPage, props.pageSize)
     }, [props.currentPage])
+
+    useEvent('resize',debouncedHandleResize)
+
+    useEffect(() => {
+        if (screenSize <= 430) {
+            props.setPortionSize(name, 5)
+        } else {
+            props.setPortionSize(name, 10)
+        }
+    })
 
     const onPageChanged = (page, portion) => {
         props.setCurrentPage(name, page)
@@ -55,10 +71,11 @@ const mapStateToProps = (state, props) => {
             currentPage: getCurrentPage(state, props),
             followingInProgress: getFollowingInProgress(state, props),
             pages: getTotalPages(state, props),
-            isFetching: getIsFetching(state, props)
+            isFetching: getIsFetching(state, props),
+            pageSize: getPageSize(state, props)
         }
     },
-    ACObject = {setCurrentPage, getUsersFromServer, followUser, unfollowUser, setCurrentPortion}
+    ACObject = {setCurrentPage, getUsersFromServer, followUser, unfollowUser, setCurrentPortion, setPortionSize}
 
 export default compose(
     connect(mapStateToProps, ACObject)

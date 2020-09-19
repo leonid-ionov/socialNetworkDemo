@@ -1,8 +1,41 @@
 .nav{
-    background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
+    background-color: darkseagreen;
+    display: grid;
+    grid-auto-columns: minmax(85px , 200px);
     align-items: inherit;
+}
+
+.nav .menu{
+    background-color: darkseagreen;
+    grid-area: menu;
+}
+.nav .menu .dropdown {
+    visibility: hidden;
+}
+
+.nav img {
+    width: 70px;
+}
+.nav .common {
+    background-color: whitesmoke;
+    padding-top: 5px;
+    width: 200px;
+}
+
+@media (max-width: 414px) {
+    .nav img {
+        display: none;
+    }
+    .nav .menu{
+        height: 70px;
+        background-color: whitesmoke;
+    }
+    .nav .menu .dropdown {
+        visibility: initial;
+    }
+    .nav .common{
+       display: none;
+    }
 }
 
 .item a{

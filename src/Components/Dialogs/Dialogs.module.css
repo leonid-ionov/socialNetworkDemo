@@ -35,6 +35,7 @@ text{
     display: grid;
     grid-template-rows: auto;
     padding: 10px;
+    grid-gap: 5px;
 }
 
 .messages .message:nth-child(even) {

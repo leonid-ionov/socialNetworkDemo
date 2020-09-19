@@ -2,13 +2,11 @@
     display: grid;
     grid-area: header;
     background-color: darkseagreen;
-    grid-template-areas: 'img loginBlock';
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 1fr;
 }
 
 .header img {
-    grid-area: img;
-    width: 60px;
+    width: 70px;
 }
 
 .loginBlock {

@@ -26,7 +26,7 @@ const DialogsContainer = React.lazy(() => import('./Components/Dialogs/DialogsCo
         return (
             <div className='app-wrapper'>
                 <HeaderContainer/>
-                <Navbar/>
+                <div className={'app-wrapper-nav'}><Navbar/></div>
                 <div className='app-wrapper-content'>
                     <Suspense fallback={<Preloader/>}>
                         <section>

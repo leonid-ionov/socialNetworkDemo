@@ -1,32 +1,35 @@
 import React, { useState } from 'react'
 import s from './Paginator.module.css'
+import { Pagination } from 'react-bootstrap'
 
 const Paginator = (props) => {
     let [portionNumber, setPortionNumber] = useState(props.currentPortion),
         leftPortionPageNumber = (portionNumber - 1) * props.portionSize + 1,
         rightPortionPageNumber = portionNumber * props.portionSize
-
+console.log('render')
     return (
-        <div>
-            <button className={portionNumber < 2 && s.hiddenBtn}
-                    onClick={() => {
-                        setPortionNumber(portionNumber - 1)
-                    }}>Prev
-            </button>
+        <Pagination size={'sm'}>
+            <Pagination.Prev disabled={portionNumber < 2}
+                             className={props.pages.length < 2 && s.hiddenBtn}
+                             onClick={() => {
+                                 setPortionNumber(portionNumber - 1)
+                             }}/>
             {props.pages
                 .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
-                .map(p => <button className={props.pages.length < 2 ? s.hiddenBtn : props.currentPage === p ? s.selectedPage : s.pages}
-                                  key={p}
-                                  onClick={() => {
-                                      props.onPageChanged(p, portionNumber)
-                                  }}>{p}</button>)
+                .map(p => <Pagination.Item className={props.pages.length < 2 && s.hiddenBtn}
+                                           active={props.currentPage === p}
+                                           key={p}
+                                           onClick={() => {
+                                               props.onPageChanged(p, portionNumber)
+                                           }}>{p}</Pagination.Item>)
             }
-            <button className={props.portions <= portionNumber && s.hiddenBtn}
-                    onClick={() => {
-                        setPortionNumber(portionNumber + 1)
-                    }}>Next
-            </button>
-        </div>
+            <Pagination.Next
+                disabled={props.portions <= portionNumber}
+                className={props.pages.length < 2 && s.hiddenBtn}
+                onClick={() => {
+                    setPortionNumber(portionNumber + 1)
+                }}/>
+        </Pagination>
     )
 }
 

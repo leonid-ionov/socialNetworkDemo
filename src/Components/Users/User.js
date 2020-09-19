@@ -2,6 +2,7 @@ import s from './Users.module.css'
 import avatarSmall from '../../assets/images/avatarSmall.jpg'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Button, Image } from 'react-bootstrap'
 
 
 const User = ({user, ...props}) => {
@@ -10,23 +11,23 @@ const User = ({user, ...props}) => {
                     <span className={s.userPhotoBtn}>
                         <div>
                             <NavLink to={'/profile/' + user.id}>
-                                <img src={user.photos.small !== null ?
+                                <Image src={user.photos.small !== null ?
                                     user.photos.small :
                                     avatarSmall} className={s.userPhoto}/>
                             </NavLink>
                         </div>
                         <div className={s.followBtn}>
                             {user.followed
-                                ? <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                ? <Button size="sm" disabled={props.followingInProgress.some(id => id === user.id)}
                                           onClick={() => {
                                               props.unfollowUser(props.name,user.id)
                                           }}
-                                >Unfollow</button> :
-                                <button disabled={props.followingInProgress.some(id => id === user.id)}
+                                >Unfollow</Button> :
+                                <Button size="sm" disabled={props.followingInProgress.some(id => id === user.id)}
                                         onClick={() => {
                                             props.followUser(props.name,user.id)
                                         }}
-                                >Follow</button>}
+                                >Follow</Button>}
                                     </div>
                                     </span>
             <span className={s.userInfo}>

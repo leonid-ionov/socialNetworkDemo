@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './ProfileInfo.module.css'
 import Preloader from '../../Common/Preloader/Preloader'
-import avatarSmall from './../../../assets/images/avatarSmall.jpg'
+import avatarLarge from './../../../assets/images/avatarLarge.jpg'
 import Contacts from './Contacts/Contacts'
 import ProfileStatus from './ProfileStatus'
 
@@ -12,7 +12,7 @@ const ProfileInfo = ({profile,status,updateUserStatus}) => {
     return (
         <div className={s.profile}>
             <span className={s.avatarPhoto}>
-                <img src={profile.photos.large ? profile.photos.large : avatarSmall}/>
+                <img src={profile.photos.large ? profile.photos.large : avatarLarge}/>
             </span>
             <span className={s.profileInfo}>
                     <div className={s.profileName}>{profile.fullName}</div>

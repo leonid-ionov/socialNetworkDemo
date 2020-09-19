@@ -1,12 +1,11 @@
 .profile {
     display: grid;
-    grid-template-areas: 'avatar info';
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: initial;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .avatarPhoto {
-    grid-area: avatar;
-    margin: 5px;
     justify-self: center;
 }
 .avatarPhoto img {
@@ -15,8 +14,7 @@
 }
 
 .profileInfo {
-    grid-area: info;
-    justify-self: left;
+    justify-self: center;
     border: 3px ridge rosybrown;
     border-radius: 5px;
     padding: 5px;

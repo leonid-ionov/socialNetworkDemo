@@ -8,7 +8,7 @@ let initialState = {
     currentPage: 1,
     isFetching: false,
     followingInProgress: [],
-    portionSize: 15,
+    portionSize: 10,
     currentPortion: 1
 }
 
@@ -16,6 +16,7 @@ const FOLLOW = `users/FOLLOW`,
     UNFOLLOW = `users/UNFOLLOW`,
     SET_USERS = `users/SET_USERS`,
     SET_CURRENT_PAGE = `users/SET_CURRENT_PAGE`,
+    SET_PORTION_SIZE = `users/SET_PORTION_SIZE`,
     SET_USERS_COUNT = `users/SET_USERS_COUNT`,
     SET_CURRENT_PORTION = `users/SET_CURRENT_PORTION`,
     TOGGLE_IS_FETCHING = `users/TOGGLE_IS_FETCHING`,
@@ -36,6 +37,8 @@ const FOLLOW = `users/FOLLOW`,
                 return {...state,  currentPage : action.currentPage}
             case SET_USERS_COUNT:
                 return {...state, totalCount : action.totalCount}
+            case SET_PORTION_SIZE:
+                return {...state, portionSize: action.portionSize}
             case SET_CURRENT_PORTION:
                 return {...state, currentPortion : action.currentPortion}
             case TOGGLE_IS_FETCHING:
@@ -63,6 +66,7 @@ export const follow = (name, userId) => ({type: FOLLOW,name, userID: userId}),
     setUsersCount = (name, totalCount) => ({type: SET_USERS_COUNT,name, totalCount: totalCount}),
     toggleIsFetching = (name, isFetching) => ({type: TOGGLE_IS_FETCHING,name, isFetching: isFetching}),
     setCurrentPortion = (name, currentPortion) => ({type: SET_CURRENT_PORTION,name, currentPortion}),
+    setPortionSize = (name,portionSize) => ({type:SET_PORTION_SIZE,name,portionSize}),
     toggleFollowingProgress = (name, isFetching, userID) => ({
         type: TOGGLE_IS_FOLLOWING_PROGRESS,name,
         isFetching: isFetching,
