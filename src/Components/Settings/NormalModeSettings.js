@@ -13,9 +13,8 @@ const NormalModeSettings = ({profile}) => {
             </Row>
             <Row>
                 <Col sm={2}>Avatar :</Col>
-                <Col sm={6}>{profile.photos.small===null?
-                    <Image src={profile.photos.small} rounded />:
-                    <Image src={avatarSmall} rounded />}
+                <Col sm={6}>
+                    <Image src={profile.photos.small ? profile.photos.small : avatarSmall} rounded />
                 </Col>
             </Row>
             <Row>
