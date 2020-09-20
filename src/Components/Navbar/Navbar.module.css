@@ -1,7 +1,8 @@
 .nav{
     background-color: darkseagreen;
     display: grid;
-    grid-auto-columns: minmax(85px , 200px);
+    grid-template-columns: minmax(85px , 200px);
+    grid-template-areas: 'img menu''common common';
     align-items: inherit;
 }
 
@@ -15,11 +16,13 @@
 
 .nav img {
     width: 70px;
+    grid-area: img;
 }
 .nav .common {
     background-color: whitesmoke;
     padding-top: 5px;
     width: 200px;
+    grid-area: common;
 }
 
 @media (max-width: 414px) {

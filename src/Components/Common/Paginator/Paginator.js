@@ -6,7 +6,6 @@ const Paginator = (props) => {
     let [portionNumber, setPortionNumber] = useState(props.currentPortion),
         leftPortionPageNumber = (portionNumber - 1) * props.portionSize + 1,
         rightPortionPageNumber = portionNumber * props.portionSize
-console.log('render')
     return (
         <Pagination size={'sm'}>
             <Pagination.Prev disabled={portionNumber < 2}
