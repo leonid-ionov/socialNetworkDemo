@@ -26,6 +26,9 @@
 }
 
 @media (max-width: 414px) {
+    .nav {
+        grid-template-areas: 'menu img' 'common common';
+    }
     .nav img {
         display: none;
     }
