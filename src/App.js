@@ -8,13 +8,13 @@ import { connect } from 'react-redux'
 import { initializeApp } from './Redux/appReducer'
 import Preloader from './Components/Common/Preloader/Preloader'
 import ProfileContainer from './Components/Profile/ProfileContainer'
-import FriendsContainer from './Components/Friends/FriendsContainer'
 import Navbar from './Components/Navbar/Navbar'
 
 const DialogsContainer = React.lazy(() => import('./Components/Dialogs/DialogsContainer')),
     LoginContainer = React.lazy(() => import('./Components/Login/LoginContainer')),
     SettingsContainer = React.lazy(() => import('./Components/Settings/SettingsContainer')),
     UsersContainer = React.lazy(() => import('./Components/Users/UsersContainer')),
+    FriendsContainer = React.lazy(() => import('./Components/Friends/FriendsContainer')),
 
     App = (props) => {
         useEffect(() => {
