@@ -2,7 +2,7 @@
 
 This is a demo version of my social network, developed using the ReactJS library.
 
-To test its capabilities, follow this link : [social network](https://neonrul.github.io/socialNetworkDemo).
+To test its capabilities, follow this link : [social network](https://leonid-ionov.github.io/socialNetworkDemo).
 
 For authorization use the given e-mail and password:
 
